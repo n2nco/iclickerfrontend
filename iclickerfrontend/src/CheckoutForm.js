@@ -135,7 +135,7 @@ const CheckoutForm = () => {
         elements,
         confirmParams: {
           // Make sure to change this to your payment completion page
-          return_url: process.env.REACT_APP_RETURN_URL,
+          return_url: process.env.ENV == 'production' ? process.env.REACT_APP_RETURN_URL : process.env.REACT_APP_RETURN_URL_DEVELOPMENT,
         },
       });
       console.log('confirm payment Reult:')
